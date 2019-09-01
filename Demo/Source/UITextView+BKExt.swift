@@ -15,7 +15,7 @@ import SnapKit
  1、使用 SnapKit 进行布局。
  2、使用 objc/runtime 动态添加了 bk_placeholderLabel 等属性
  */
-extension UITextView {
+public extension UITextView {
     
     private struct Keys {
         static let bk_placeholderLabelKey = UnsafeRawPointer("bk_placeholderLabelKey")
