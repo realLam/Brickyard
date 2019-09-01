@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Brickyard"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "some custom or extension for iOS"
   spec.homepage     = "https://github.com/realLam/Brickyard.git"
   spec.license      = "MIT"
