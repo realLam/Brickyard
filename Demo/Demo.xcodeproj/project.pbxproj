@@ -13,6 +13,8 @@
 		3BDF6D7D231BB69F001BEBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF6D7C231BB69F001BEBEB /* Assets.xcassets */; };
 		3BDF6D80231BB69F001BEBEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF6D7E231BB69F001BEBEB /* LaunchScreen.storyboard */; };
 		3BDF6D89231BC41A001BEBEB /* UITextView+BKExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF6D88231BC41A001BEBEB /* UITextView+BKExt.swift */; };
+		3BF7A0D3231D5F9C00716D2E /* UIButton+BKExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7A0D2231D5F9C00716D2E /* UIButton+BKExt.swift */; };
+		3BF7A0D5231D6C0000716D2E /* UITextField+BKExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7A0D4231D6C0000716D2E /* UITextField+BKExt.swift */; };
 		F37C411C769ADDD743751664 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5847821DA72A15252E7900BB /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		3BDF6D7F231BB69F001BEBEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BDF6D81231BB69F001BEBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BDF6D88231BC41A001BEBEB /* UITextView+BKExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+BKExt.swift"; sourceTree = "<group>"; };
+		3BF7A0D2231D5F9C00716D2E /* UIButton+BKExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BKExt.swift"; sourceTree = "<group>"; };
+		3BF7A0D4231D6C0000716D2E /* UITextField+BKExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+BKExt.swift"; sourceTree = "<group>"; };
 		5847821DA72A15252E7900BB /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA06DEFFFF45EBE5BF28778 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,8 @@
 		3BDF6D87231BC41A001BEBEB /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3BF7A0D2231D5F9C00716D2E /* UIButton+BKExt.swift */,
+				3BF7A0D4231D6C0000716D2E /* UITextField+BKExt.swift */,
 				3BDF6D88231BC41A001BEBEB /* UITextView+BKExt.swift */,
 			);
 			path = Source;
@@ -216,7 +222,9 @@
 			files = (
 				3BDF6D78231BB69E001BEBEB /* ViewController.swift in Sources */,
 				3BDF6D89231BC41A001BEBEB /* UITextView+BKExt.swift in Sources */,
+				3BF7A0D3231D5F9C00716D2E /* UIButton+BKExt.swift in Sources */,
 				3BDF6D76231BB69E001BEBEB /* AppDelegate.swift in Sources */,
+				3BF7A0D5231D6C0000716D2E /* UITextField+BKExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
