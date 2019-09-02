@@ -9,8 +9,8 @@
 import UIKit
 
 // MARK: - UITextField 扩展，添加闭包监听text
-extension UITextField {
-        
+public extension UITextField {
+    
     private struct BKKeys {
         static let textFieldBlock = UnsafeRawPointer("textFieldBlock")
     }
