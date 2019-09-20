@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Brickyard
 
 class ViewController: UIViewController {
 
@@ -24,6 +25,14 @@ class ViewController: UIViewController {
         btn.bk_addTarget { (btn) in
             print(btn)
         }
+        
+//        let img = UIImage.bk_image(fromVideoUrl: URL(fileURLWithPath: "/Users/lam/Downloads/IMG_0105.MOV"))
+//        let iv = UIImageView.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+//        iv.contentMode = .scaleAspectFill
+//        iv.clipsToBounds = true
+//        iv.image = img
+//        view.addSubview(iv)
+        
     }
 
     
