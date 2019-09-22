@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0B09E2233753DF00AFF1B2 /* UIButton+BKExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B09DE233753DF00AFF1B2 /* UIButton+BKExt.swift */; };
+		3B0B09E3233753DF00AFF1B2 /* UITextView+BKExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B09DF233753DF00AFF1B2 /* UITextView+BKExt.swift */; };
+		3B0B09E4233753DF00AFF1B2 /* UIImage+BKExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B09E0233753DF00AFF1B2 /* UIImage+BKExt.swift */; };
+		3B0B09E5233753DF00AFF1B2 /* UITextField+BKExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B09E1233753DF00AFF1B2 /* UITextField+BKExt.swift */; };
 		3BDF6D76231BB69E001BEBEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF6D75231BB69E001BEBEB /* AppDelegate.swift */; };
 		3BDF6D78231BB69E001BEBEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF6D77231BB69E001BEBEB /* ViewController.swift */; };
 		3BDF6D7B231BB69E001BEBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF6D79231BB69E001BEBEB /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 
 /* Begin PBXFileReference section */
 		1EEEF09A1F2D898CD6ECC016 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		3B0B09DE233753DF00AFF1B2 /* UIButton+BKExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BKExt.swift"; sourceTree = "<group>"; };
+		3B0B09DF233753DF00AFF1B2 /* UITextView+BKExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+BKExt.swift"; sourceTree = "<group>"; };
+		3B0B09E0233753DF00AFF1B2 /* UIImage+BKExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BKExt.swift"; sourceTree = "<group>"; };
+		3B0B09E1233753DF00AFF1B2 /* UITextField+BKExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+BKExt.swift"; sourceTree = "<group>"; };
 		3BDF6D72231BB69E001BEBEB /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDF6D75231BB69E001BEBEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BDF6D77231BB69E001BEBEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0B09DD233753DF00AFF1B2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3B0B09DE233753DF00AFF1B2 /* UIButton+BKExt.swift */,
+				3B0B09DF233753DF00AFF1B2 /* UITextView+BKExt.swift */,
+				3B0B09E0233753DF00AFF1B2 /* UIImage+BKExt.swift */,
+				3B0B09E1233753DF00AFF1B2 /* UITextField+BKExt.swift */,
+			);
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
 		3BDF6D69231BB69E001BEBEB = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +80,7 @@
 		3BDF6D74231BB69E001BEBEB /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3B0B09DD233753DF00AFF1B2 /* Source */,
 				3BDF6D75231BB69E001BEBEB /* AppDelegate.swift */,
 				3BDF6D77231BB69E001BEBEB /* ViewController.swift */,
 				3BDF6D79231BB69E001BEBEB /* Main.storyboard */,
@@ -203,7 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0B09E5233753DF00AFF1B2 /* UITextField+BKExt.swift in Sources */,
+				3B0B09E3233753DF00AFF1B2 /* UITextView+BKExt.swift in Sources */,
 				3BDF6D78231BB69E001BEBEB /* ViewController.swift in Sources */,
+				3B0B09E4233753DF00AFF1B2 /* UIImage+BKExt.swift in Sources */,
+				3B0B09E2233753DF00AFF1B2 /* UIButton+BKExt.swift in Sources */,
 				3BDF6D76231BB69E001BEBEB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

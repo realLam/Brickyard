@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Brickyard
+//import Brickyard
 
 class ViewController: UIViewController {
 
@@ -18,8 +18,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        textView.bk_placeholder = "thx"
-        textView.bk_maxWordCount = 50
+        textView.bk_placeholder = "iOS中, 控件的布局方式有两种, 一种是通过"
+        textView.bk_maxWordCount = NSNumber(integerLiteral: 50)
+        
         
         
         btn.bk_addTarget { (btn) in

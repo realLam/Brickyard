@@ -5,5 +5,5 @@ target 'Demo' do
   use_frameworks!
   
   pod 'SnapKit', '~> 5.0.0'
-  pod 'Brickyard', '~> 0.0.5'
+#  pod 'Brickyard', '~> 0.0.5'
 end

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import SnapKit
-
 
 // MARK: - 扩展 UITextView，添加 placeholder 和 字数限制功能。
 /*
@@ -37,25 +35,28 @@ public extension UITextView {
             objc_setAssociatedObject(self, Keys.bk_placeholderLabelKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get{
-            let obj =  objc_getAssociatedObject(self, Keys.bk_placeholderLabelKey)
+            let obj =  objc_getAssociatedObject(self, Keys.bk_placeholderLabelKey) as? UILabel
             guard let placeholderLabel = obj else {
                 let label = UILabel()
                 label.numberOfLines = 0
                 label.font = self.font
                 label.textColor = UIColor.lightGray
                 label.isUserInteractionEnabled = false
+                label.translatesAutoresizingMaskIntoConstraints = false
                 addSubview(label)
+                // 添加约束。要约束宽，否则可能导致label不换行。
+                addConstraint(NSLayoutConstraint(item: label, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 7)) 
+                addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))                 
+                addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .lessThanOrEqual, toItem: self, attribute: .width, multiplier: 1.0, constant: -14))
+                addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .lessThanOrEqual, toItem: self, attribute: .height, multiplier: 1.0, constant: -24))
+                // 设置bk_placeholderLabel，自动调用set方法
                 self.bk_placeholderLabel = label
-                label.snp.makeConstraints { (make) in
-                    make.left.right.top.equalToSuperview().inset(7)
-                    make.bottom.equalToSuperview().inset(40)
-                    // 宽要比父view小，否则可能会左右滑动
-                    make.width.lessThanOrEqualToSuperview().offset(-20)
-                }
+                
                 NotificationCenter.default.addObserver(self, selector: #selector(bk_textDidChange), name: UITextView.textDidChangeNotification, object: self)
+                
                 return label
             }
-            return (placeholderLabel as? UILabel)!
+            return placeholderLabel
         }
     }
     
@@ -90,29 +91,35 @@ public extension UITextView {
             objc_setAssociatedObject(self, Keys.bk_wordCountLabelKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get{
-            let obj =  objc_getAssociatedObject(self, Keys.bk_wordCountLabelKey)
+            let obj =  objc_getAssociatedObject(self, Keys.bk_wordCountLabelKey) as? UILabel
             guard let wordCountLabel = obj else {
                 let label = UILabel()
                 label.textAlignment = .right
                 label.font = self.font
                 label.textColor = UIColor.lightGray
                 label.isUserInteractionEnabled = false
-                // 调用setter
-                self.bk_wordCountLabel = label
+                
                 // 添加到视图中
                 if let grandfatherView = self.superview {
                     // 这里添加到 self.superview。如果添加到self，发现自动布局效果不理想。
                     grandfatherView.addSubview(label)
-                    label.snp.makeConstraints { (make) in
-                        make.bottom.right.equalTo(self).inset(7)
-                    }
+                    
+                    label.translatesAutoresizingMaskIntoConstraints = false
+                    
+                    grandfatherView.addConstraint(NSLayoutConstraint(item: label, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -7)) 
+                    grandfatherView.addConstraint(NSLayoutConstraint(item: label, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -7))
                 } else {
                     print("请先将您的UITextView添加到视图中")
                 }
+                
+                // 调用setter
+                self.bk_wordCountLabel = label
+                
                 NotificationCenter.default.addObserver(self, selector: #selector(bk_maxWordCountAction), name: UITextView.textDidChangeNotification, object: self)
+                
                 return label
             }
-            return (wordCountLabel as? UILabel)!
+            return wordCountLabel
         }
     }
     
@@ -120,8 +127,10 @@ public extension UITextView {
     var bk_maxWordCount: NSNumber? {
         set {
             objc_setAssociatedObject(self, Keys.bk_maxWordCountKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-            guard let count = newValue else { return }
-            self.bk_wordCountLabel?.text = "\(self.text.count)/\(count)"
+            guard let count = newValue?.intValue else { return }
+            guard let label = self.bk_wordCountLabel else { return }
+            label.text = "\(self.text.count)/\(count)"
+            
         }
         get {
             return  objc_getAssociatedObject(self, Keys.bk_maxWordCountKey) as? NSNumber
