@@ -38,6 +38,7 @@ public extension UITextView {
             let obj =  objc_getAssociatedObject(self, Keys.bk_placeholderLabelKey) as? UILabel
             guard let placeholderLabel = obj else {
                 let label = UILabel()
+                label.textAlignment = .left
                 label.numberOfLines = 0
                 label.font = self.font
                 label.textColor = UIColor.lightGray
@@ -45,10 +46,10 @@ public extension UITextView {
                 label.translatesAutoresizingMaskIntoConstraints = false
                 addSubview(label)
                 // 添加约束。要约束宽，否则可能导致label不换行。
-                addConstraint(NSLayoutConstraint(item: label, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 7)) 
-                addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))                 
-                addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .lessThanOrEqual, toItem: self, attribute: .width, multiplier: 1.0, constant: -14))
-                addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .lessThanOrEqual, toItem: self, attribute: .height, multiplier: 1.0, constant: -24))
+                addConstraint(NSLayoutConstraint(item: label, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 7))
+                addConstraint(NSLayoutConstraint(item: label, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 4))
+                addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .lessThanOrEqual, toItem: self, attribute: .width, multiplier: 1.0, constant: -8))
+                addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .lessThanOrEqual, toItem: self, attribute: .height, multiplier: 1.0, constant: -7))
                 // 设置bk_placeholderLabel，自动调用set方法
                 self.bk_placeholderLabel = label
                 
