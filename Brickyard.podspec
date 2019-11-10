@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "reallam" => "bokor_lam@foxmail.com" }
   spec.platform     = :ios, "10.0"
   spec.source       = { :git => "https://github.com/realLam/Brickyard.git", :tag => spec.version }
-  spec.source_files  = "Demo/Source", "Demo/Source/*"
+  spec.source_files  = "Demo/Source/BKUtils/*", "Demo/Source/UIExtension/*"
   #依赖库
   #spec.dependency "SnapKit", "~> 5.0.0"
   #指定swift版本
