@@ -44,8 +44,9 @@ class CountdownManager {
     /// - Parameters:
     ///   - reuseId: 唯一id，一个倒计时要对应一个id
     ///   - count: 最大的秒数
+    ///   - create: 如果 reuseId 不存在，是否需要创建
     ///   - block: 倒计时回调
-    func start(reuseId: String, count: Int, block: @escaping ((_ count: Int) -> ())) {
+    func start(reuseId: String, count: Int, create: Bool, block: @escaping ((_ count: Int) -> ())) {
         
         var contain = false
         var extistModel: CountDownModel?
@@ -60,9 +61,12 @@ class CountdownManager {
             }
         }
         if !contain {
-            // reuseId 不存在，直接添加
-            let model = CountDownModel(reuseId: reuseId, count: count, block: block)
-            models.append(model)
+            // reuseId 不存在
+            if create {
+                // 需要创建才添加
+                let model = CountDownModel(reuseId: reuseId, count: count, block: block)
+                models.append(model)
+            }
         } else {
             // reuseId 已经存在，替换
             let model = CountDownModel(reuseId: reuseId, count: extistModel!.count, block: block)
